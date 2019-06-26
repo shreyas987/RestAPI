@@ -44,7 +44,7 @@ public class ClientClass {
             do {
             	output = br.readLine();
                 output2+=output;
-            }while (output != null);
+            }while ((output = br.readLine()) != null);
            
             conn.disconnect();
             
@@ -53,7 +53,7 @@ public class ClientClass {
             System.out.println("Exception in NetClientGet:- " + e);
         }
 		
-		return output2;
+		return (String)output2;
 		
 	}
 }
