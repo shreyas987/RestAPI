@@ -2,6 +2,8 @@ package org.shreyas.messenger.service;
 
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URI;
@@ -47,13 +49,17 @@ public class ClientClass {
             }while ((output = br.readLine()) != null);
            
             conn.disconnect();
-            
+			String TempFile = "Temp.txt";
+			BufferedWriter writer = new BufferedWriter(new FileWriter(TempFile ));
+		    writer.write(output2);
+		     
+		    writer.close();
 
        } catch (Exception e) {
             System.out.println("Exception in NetClientGet:- " + e);
+            return "Please enter the correct City name";
         }
 		
 		return (String)output2;
-		
 	}
 }

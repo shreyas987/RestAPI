@@ -1,5 +1,9 @@
 package org.shreyas.messenger.resources;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import javax.json.Json;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
@@ -16,28 +20,36 @@ import org.shreyas.messenger.service.ClientClass;
 public class FormResources1 {
 		
 
+
+
 	@POST
 	
-	public JSONArray City(
+	public String City(
 			@FormParam("City") String city){
 
 		String str = ClientClass.main(city);
 		System.out.println(str);
 			//String str2 = "<HTML><BODY><p>"+str+"</p></BODY></HTML>";
 			
-			try {
+/*			try {
 				JSONParser parser = new JSONParser();
 				JSONObject jobj = (JSONObject)parser.parse(str);
 				
-				JSONArray jarr = (JSONArray)jobj.get(0);
+				String jarr = jobj.toJSONString();
+				String TempFile = "Temp.txt";
+				//System.out.println(jarr);
+			    BufferedWriter writer = new BufferedWriter(new FileWriter(TempFile ));
+			    writer.write(jarr);
+			     
+			    writer.close();
 				return jarr;
-			} catch (ParseException e) {
+			} catch (ParseException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return null;
-			}
+			}*/
 
-		
+		return str;
 		}
 
 }
