@@ -29,6 +29,7 @@ public class FormResources1 {
 
 		String str = ClientClass.main(city);
 		System.out.println(str);
+
 			//String str2 = "<HTML><BODY><p>"+str+"</p></BODY></HTML>";
 			
 /*			try {
@@ -49,7 +50,7 @@ public class FormResources1 {
 				return null;
 			}*/
 
-		return str;
+		return "<HTML><BODY><h3>"+str+"</h3></BODY></HTML>";
 		}
 
 }
