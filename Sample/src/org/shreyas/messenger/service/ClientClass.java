@@ -47,7 +47,7 @@ public class ClientClass {
             	output = br.readLine();
                 output2+=output;
             }while ((output = br.readLine()) != null);
-           
+            System.out.println(br);
             conn.disconnect();
 			String TempFile = "Temp.txt";
 			BufferedWriter writer = new BufferedWriter(new FileWriter(TempFile ));
