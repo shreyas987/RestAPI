@@ -48,7 +48,7 @@ public class FormResources1 {
 		System.out.println(current.substring(tempc+8, tempf-2));
 		System.out.println(location.substring(time_st, time_end));
 
-		String str2 = "Current temperature in > "+location.substring(name+7, region-3)+"< is "+current.substring(tempc+8,tempf-2)+"\n"+"Time "+location.substring(time_st, time_end);
+		String str2 = "Current temperature in > "+location.substring(name+7, region-3)+"< is "+current.substring(tempc+8,tempf-2)+" ; Time: "+location.substring(time_st+12, time_end);
 		JSONParser parser = new JSONParser();
 		try {
 			JSONObject jobj = (JSONObject)parser.parse(str);
@@ -74,7 +74,7 @@ public class FormResources1 {
 				return null;
 			}*/
 
-		return "<HTML><BODY><h3>"+str2+"</h3></BODY></HTML>";
+		return "<HTML><TITLE>Temperature</TITLE><BODY bgcolor=\"beige\"><h3>"+str2+"</h3></BODY></HTML>";
 		}
 
 }
